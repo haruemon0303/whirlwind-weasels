@@ -27,8 +27,8 @@
         { "type": "dialogue", "speaker": "透", "text": "えっ……？" },
         { "type": "narration", "text": "慌てて窓の外を見るが、そこには荒れ狂う雪の渦があるだけだ。" },
         { "type": "narration", "text": "しかし、山岡の表情は真剣そのものだった。" },
-        { "type": "dialogue", "speaker": "山岡", "text": "……あれは濱家や。濱家が、痛風の足をひきずりながらこっちを見てる。あいつ、先に行きよったんや" },
-        { "type": "narration", "text": "だが、相方の濱家さんは、一時間前のトイレ休憩から戻ってきていないはずだった。" },
+        { "type": "dialogue", "speaker": "山岡", "text": "……あれは濱原や。濱原が、痛風の足をひきずりながらこっちを見てる。あいつ、先に行きよったんや" },
+        { "type": "narration", "text": "だが、相方の濱原さんは、一時間前のトイレ休憩から戻ってきていないはずだった。" },
 
         { "type": "system", "text": "（青い影が、窓の向こうで揺れた気がした。）", "effect": "noise" }
       ],
@@ -51,7 +51,7 @@
       "choices": [
         { "label": "1. 勇気を出して、バスの扉を開ける。", "nextSceneId": "mystery_1" },
         { "label": "2. 山岡さんの後ろに隠れて様子を見る。", "nextSceneId": "bad_end_15" },
-        { "label": "3. 「濱家さーーん！」と叫んでみる。", "nextSceneId": "branch_3_stub" }
+        { "label": "3. 「濱原さーーん！」と叫んでみる。", "nextSceneId": "branch_3_stub" }
       ]
     },
 
@@ -62,7 +62,7 @@
         { "type": "narration", "text": "僕は意を決して、凍りついたドアのレバーを力任せに引いた。" },
         { "type": "system", "text": "【SE：プシューッ……！というドアの開放音と、吹き荒れる風の音】", "se": "wind" },
         { "type": "narration", "text": "雪煙が車内に舞い込み、視界が真っ白に染まる。" },
-        { "type": "narration", "text": "そこに立っていたのは、濱家さん……ではなかった。" },
+        { "type": "narration", "text": "そこに立っていたのは、濱原さん……ではなかった。" },
         { "type": "narration", "text": "雪の中に突き刺さっていたのは、一足の「真っ赤なスニーカー」だった。" },
         { "type": "dialogue", "speaker": "山岡", "text": "……っ！ あれは、俺が抽選で外れた限定モデルのジョーダン1やないか！ なんであんなところに……" },
         { "type": "narration", "text": "山岡さんが狂ったようにバスを飛び出し、雪の中に手を突っ込む。" },
@@ -72,16 +72,16 @@
         { "type": "narration", "text": "スニーカーの中からこぼれ落ちたのは、凍りついた「人間の指」だった。" },
         { "type": "narration", "text": "それも、異様に長くて節くれ立った、見覚えのある指……。" },
         { "type": "system", "text": "【BGM：心臓の鼓動のような重低音】", "se": "heartbeat" },
-        { "type": "dialogue", "speaker": "真理", "text": "嘘……濱家さんの、ツッコミの指……！？" },
+        { "type": "dialogue", "speaker": "真理", "text": "嘘……濱原さんの、ツッコミの指……！？" },
         { "type": "narration", "text": "その時、バスの屋根からドスンと大きな音がした。", "effect": "shake" },
         { "type": "narration", "text": "見上げると、フロントガラス越しに、逆さまになった「何か」がゆっくりと降りてくる。" },
-        { "type": "narration", "text": "それは、全身をハイブランドの服で包み、顔だけが般若のように歪んだ濱家さんだった。" },
-        { "type": "narration", "text": "いや、それはもう濱家さんではなかった。", "effect": "noise" },
-        { "type": "dialogue", "speaker": "山岡", "text": "……そうか、わかったぞ。濱家は、痛風の痛みと、俺のYouTubeの登録者数が自分より多いストレスで、ついに『かげぎつね』という妖怪に成れ果てたんや" },
+        { "type": "narration", "text": "それは、全身をハイブランドの服で包み、顔だけが般若のように歪んだ濱原さんだった。" },
+        { "type": "narration", "text": "いや、それはもう濱原さんではなかった。", "effect": "noise" },
+        { "type": "dialogue", "speaker": "山岡", "text": "……そうか、わかったぞ。濱原は、痛風の痛みと、俺のYouTubeの登録者数が自分より多いストレスで、ついに『かげぎつね』という妖怪に成れ果てたんや" },
         { "type": "narration", "text": "山岡さんはスニーカーを抱いたまま、静かに僕たちに告げた。" },
         { "type": "dialogue", "speaker": "山岡", "text": "透、真理ちゃん。……逃げろ。ここは俺が『論破』で食い止める。俺のほうが、あいつより格上やってことを教えてやるわ" },
         { "type": "narration", "text": "それが、僕が見た山岡さんの最後の姿だった。" },
-        { "type": "narration", "text": "吹雪の中、山岡さんの「それってエビデンスあるんですか！？」という叫び声と、濱家さんの「痛いねん！」という咆哮が、いつまでも山に響き渡っていた。", "se": "wind", "effect": "shake" },
+        { "type": "narration", "text": "吹雪の中、山岡さんの「それってエビデンスあるんですか！？」という叫び声と、濱原さんの「痛いねん！」という咆哮が、いつまでも山に響き渡っていた。", "se": "wind", "effect": "shake" },
         { "type": "system", "text": "【終：TO BE CONTINUED（真・かげぎつね編へ）】", "effect": "flash" }
       ],
       "choices": [
@@ -115,7 +115,7 @@
       "bgm": "bgm_main",
       "lines": [
         { "type": "narration", "text": "僕は恐怖を振り払うように、暗闇の雪原に向かって声を限りに叫んだ。" },
-        { "type": "dialogue", "speaker": "透", "text": "濱家さーーーん！ どこですかーーー！！" },
+        { "type": "dialogue", "speaker": "透", "text": "濱原さーーーん！ どこですかーーー！！" },
         { "type": "system", "text": "【SE：やまびこ「……ハマイエサーン……ハマイエサーン……」】", "se": "echo" },
         { "type": "narration", "text": "返事はない。ただ、自分の声が虚しくこだまするだけだ。" },
         { "type": "narration", "text": "……と思った、その時だった。" },
@@ -126,21 +126,21 @@
         { "type": "system", "text": "【BGM：明るく間抜けなカントリー調】" },
         { "type": "narration", "text": "雪の中から、ニョキニョキと「長い何か」が生えてきた。" },
         { "type": "narration", "text": "それは電柱のようでもあり、巨大なタケノコのようでもある。" },
-        { "type": "narration", "text": "よく見ると、それは首が5メートルほどに伸び切った濱家さんだった。" },
+        { "type": "narration", "text": "よく見ると、それは首が5メートルほどに伸び切った濱原さんだった。" },
         { "type": "dialogue", "speaker": "真理", "text": "な、何あれ……！？ ろくろ首！？" },
-        { "type": "dialogue", "speaker": "山岡", "text": "違う。あれは濱家や。あいつ、移動中のロケバスの座席が狭すぎて、首を伸ばしてリラックスする癖があるんや。それが吹雪の寒さで固まってしもたんやな" },
+        { "type": "dialogue", "speaker": "山岡", "text": "違う。あれは濱原や。あいつ、移動中のロケバスの座席が狭すぎて、首を伸ばしてリラックスする癖があるんや。それが吹雪の寒さで固まってしもたんやな" },
         { "type": "narration", "text": "山岡さんは呆れたようにため息をつき、ポケットから1本の「冷えピタ」を取り出した。" },
         { "type": "dialogue", "speaker": "山岡", "text": "透、これを持ってあいつの額に貼ってこい。冷やせば元に戻る。俺は寒いから行かへんけど" },
         { "type": "dialogue", "speaker": "透", "text": "えっ、僕がですか！？" },
-        { "type": "narration", "text": "僕は言われるがまま、雪の中を泳ぐように進み、5メートル上の濱家さんの額に冷えピタを貼り付けた。" },
+        { "type": "narration", "text": "僕は言われるがまま、雪の中を泳ぐように進み、5メートル上の濱原さんの額に冷えピタを貼り付けた。" },
         { "type": "narration", "text": "その瞬間。" },
         { "type": "system", "text": "【SE：ポヨーーーン！という間の抜けた音】", "se": "boing" },
-        { "type": "narration", "text": "濱家さんの首がバネのように縮み、猛烈な勢いで地面に叩きつけられた。", "effect": "shake" },
-        { "type": "dialogue", "speaker": "濱家", "text": "……痛いねん！ 何すんねん！ ……あ、山岡？ お前、俺の弁当食うたやろ" },
+        { "type": "narration", "text": "濱原さんの首がバネのように縮み、猛烈な勢いで地面に叩きつけられた。", "effect": "shake" },
+        { "type": "dialogue", "speaker": "濱原", "text": "……痛いねん！ 何すんねん！ ……あ、山岡？ お前、俺の弁当食うたやろ" },
         { "type": "dialogue", "speaker": "山岡", "text": "証拠あんのか？ 証拠出せや" },
         { "type": "narration", "text": "いつもの言い合いが始まった。" },
         { "type": "narration", "text": "どうやら、事件なんて最初から起きていなかったらしい。" },
-        { "type": "narration", "text": "ただ、濱家さんの座高が少しだけ、以前より高くなっていたことだけが、あの夜の唯一のミステリーだった。" },
+        { "type": "narration", "text": "ただ、濱原さんの座高が少しだけ、以前より高くなっていたことだけが、あの夜の唯一のミステリーだった。" },
         { "type": "system", "text": "【終：BAD END No.26 「ただの座高」】", "effect": "flash" }
       ],
       "choices": [
