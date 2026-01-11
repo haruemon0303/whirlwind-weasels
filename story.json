@@ -3,7 +3,7 @@
   "startSceneId": "opening",
   "scenes": {
     "opening": {
-      "bg": "assets/images/bg_room.svg",
+      "bg": "assets/images/bg_bus.svg",
       "bgm": "bgm_main",
       "lines": [
         { "type": "system", "text": "【BGM：静かな吹雪の音】", "se": "ambient" },
@@ -38,7 +38,7 @@
     },
 
     "choice_point": {
-      "bg": "assets/images/bg_room.svg",
+      "bg": "assets/images/bg_bus.svg",
       "bgm": "bgm_main",
       "lines": [
         { "type": "narration", "text": "バスの扉が、外側から何者かによって激しく叩かれた。" },
@@ -56,7 +56,7 @@
     },
 
     "mystery_1": {
-      "bg": "assets/images/bg_room.svg",
+      "bg": "assets/images/bg_bus.svg",
       "bgm": "bgm_main",
       "lines": [
         { "type": "narration", "text": "僕は意を決して、凍りついたドアのレバーを力任せに引いた。" },
@@ -90,7 +90,7 @@
     },
 
     "bad_end_15": {
-      "bg": "assets/images/bg_room.svg",
+      "bg": "assets/images/bg_bus.svg",
       "bgm": "bgm_main",
       "lines": [
         { "type": "narration", "text": "僕は恐怖に負け、山岡さんの背中にしがみついた。" },
@@ -111,7 +111,7 @@
     },
 
     "branch_3_stub": {
-      "bg": "assets/images/bg_room.svg",
+      "bg": "assets/images/bg_bus.svg",
       "bgm": "bgm_main",
       "lines": [
         { "type": "narration", "text": "僕は恐怖を振り払うように、暗闇の雪原に向かって声を限りに叫んだ。" },

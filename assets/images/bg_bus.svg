@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="busFloor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2332;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1419;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="seatColor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c4a6b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e3450;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#152638;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="windowGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#e8f4ff;stop-opacity:0.9" />
+      <stop offset="60%" style="stop-color:#b8d4e8;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#8aacc8;stop-opacity:0.5" />
+    </radialGradient>
+  </defs>
+
+  <!-- バス床面 -->
+  <rect x="0" y="0" width="1024" height="768" fill="url(#busFloor)"/>
+
+  <!-- 天井 -->
+  <rect x="0" y="0" width="1024" height="120" fill="#1a2838" opacity="0.9"/>
+  <rect x="0" y="100" width="1024" height="30" fill="#0f1821" opacity="0.8"/>
+
+  <!-- 左側窓（複数） -->
+  <g id="leftWindows">
+    <rect x="80" y="80" width="180" height="140" rx="8" fill="url(#windowGlow)" opacity="0.85"/>
+    <rect x="80" y="80" width="180" height="140" rx="8" fill="none" stroke="#0a1520" stroke-width="6"/>
+    <!-- 吹雪エフェクト -->
+    <circle cx="120" cy="110" r="3" fill="white" opacity="0.9"/>
+    <circle cx="180" cy="140" r="2" fill="white" opacity="0.8"/>
+    <circle cx="220" cy="120" r="2.5" fill="white" opacity="0.7"/>
+    <circle cx="140" cy="180" r="2" fill="white" opacity="0.9"/>
+    <circle cx="200" cy="160" r="3" fill="white" opacity="0.8"/>
+
+    <rect x="290" y="80" width="180" height="140" rx="8" fill="url(#windowGlow)" opacity="0.85"/>
+    <rect x="290" y="80" width="180" height="140" rx="8" fill="none" stroke="#0a1520" stroke-width="6"/>
+    <circle cx="330" cy="130" r="2.5" fill="white" opacity="0.9"/>
+    <circle cx="390" cy="110" r="3" fill="white" opacity="0.8"/>
+    <circle cx="420" cy="170" r="2" fill="white" opacity="0.7"/>
+    <circle cx="350" cy="150" r="2.5" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- 右側窓（複数） -->
+  <g id="rightWindows">
+    <rect x="764" y="80" width="180" height="140" rx="8" fill="url(#windowGlow)" opacity="0.85"/>
+    <rect x="764" y="80" width="180" height="140" rx="8" fill="none" stroke="#0a1520" stroke-width="6"/>
+    <circle cx="800" cy="120" r="3" fill="white" opacity="0.9"/>
+    <circle cx="860" cy="100" r="2" fill="white" opacity="0.8"/>
+    <circle cx="900" cy="150" r="2.5" fill="white" opacity="0.7"/>
+    <circle cx="820" cy="170" r="2" fill="white" opacity="0.9"/>
+
+    <rect x="554" y="80" width="180" height="140" rx="8" fill="url(#windowGlow)" opacity="0.85"/>
+    <rect x="554" y="80" width="180" height="140" rx="8" fill="none" stroke="#0a1520" stroke-width="6"/>
+    <circle cx="600" cy="130" r="2.5" fill="white" opacity="0.9"/>
+    <circle cx="660" cy="110" r="3" fill="white" opacity="0.8"/>
+    <circle cx="690" cy="160" r="2" fill="white" opacity="0.7"/>
+  </g>
+
+  <!-- 中央後方の大きな窓 -->
+  <rect x="360" y="60" width="304" height="180" rx="10" fill="url(#windowGlow)" opacity="0.8"/>
+  <rect x="360" y="60" width="304" height="180" rx="10" fill="none" stroke="#0a1520" stroke-width="8"/>
+  <!-- 後方窓の吹雪 -->
+  <circle cx="420" cy="100" r="3" fill="white" opacity="0.9"/>
+  <circle cx="480" cy="140" r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="550" cy="110" r="3" fill="white" opacity="0.9"/>
+  <circle cx="600" cy="180" r="2" fill="white" opacity="0.7"/>
+  <circle cx="520" cy="200" r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="450" cy="220" r="2" fill="white" opacity="0.9"/>
+
+  <!-- 左側座席列 -->
+  <g id="leftSeats">
+    <!-- 座席1 -->
+    <rect x="100" y="280" width="140" height="180" rx="12" fill="url(#seatColor)"/>
+    <rect x="100" y="280" width="140" height="100" rx="12" fill="url(#seatColor)" opacity="0.8"/>
+    <rect x="106" y="286" width="128" height="88" rx="8" fill="#1e3450" opacity="0.6"/>
+
+    <!-- 座席2 -->
+    <rect x="100" y="480" width="140" height="200" rx="12" fill="url(#seatColor)"/>
+    <rect x="100" y="480" width="140" height="110" rx="12" fill="url(#seatColor)" opacity="0.8"/>
+    <rect x="106" y="486" width="128" height="98" rx="8" fill="#1e3450" opacity="0.6"/>
+  </g>
+
+  <!-- 右側座席列 -->
+  <g id="rightSeats">
+    <!-- 座席1 -->
+    <rect x="784" y="280" width="140" height="180" rx="12" fill="url(#seatColor)"/>
+    <rect x="784" y="280" width="140" height="100" rx="12" fill="url(#seatColor)" opacity="0.8"/>
+    <rect x="790" y="286" width="128" height="88" rx="8" fill="#1e3450" opacity="0.6"/>
+
+    <!-- 座席2 -->
+    <rect x="784" y="480" width="140" height="200" rx="12" fill="url(#seatColor)"/>
+    <rect x="784" y="480" width="140" height="110" rx="12" fill="url(#seatColor)" opacity="0.8"/>
+    <rect x="790" y="486" width="128" height="98" rx="8" fill="#1e3450" opacity="0.6"/>
+  </g>
+
+  <!-- 中央座席列 -->
+  <g id="centerSeats">
+    <!-- 左中央座席 -->
+    <rect x="280" y="380" width="160" height="220" rx="12" fill="url(#seatColor)"/>
+    <rect x="280" y="380" width="160" height="120" rx="12" fill="url(#seatColor)" opacity="0.8"/>
+    <rect x="286" y="386" width="148" height="108" rx="8" fill="#1e3450" opacity="0.6"/>
+
+    <!-- 右中央座席 -->
+    <rect x="584" y="380" width="160" height="220" rx="12" fill="url(#seatColor)"/>
+    <rect x="584" y="380" width="160" height="120" rx="12" fill="url(#seatColor)" opacity="0.8"/>
+    <rect x="590" y="386" width="148" height="108" rx="8" fill="#1e3450" opacity="0.6"/>
+  </g>
+
+  <!-- 通路 -->
+  <rect x="460" y="300" width="104" height="468" fill="#0d1419" opacity="0.8"/>
+  <line x1="470" y1="320" x2="470" y2="750" stroke="#1a2838" stroke-width="2" opacity="0.5"/>
+  <line x1="554" y1="320" x2="554" y2="750" stroke="#1a2838" stroke-width="2" opacity="0.5"/>
+
+  <!-- 雪の粒（前景） -->
+  <circle cx="150" cy="500" r="2" fill="white" opacity="0.4"/>
+  <circle cx="320" cy="600" r="1.5" fill="white" opacity="0.3"/>
+  <circle cx="700" cy="550" r="2" fill="white" opacity="0.4"/>
+  <circle cx="850" cy="620" r="1.5" fill="white" opacity="0.3"/>
+  <circle cx="512" cy="450" r="1" fill="white" opacity="0.5"/>
+
+  <!-- 暗めのビネット効果 -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="0%" style="stop-color:#000000;stop-opacity:0" />
+    <stop offset="100%" style="stop-color:#000000;stop-opacity:0.5" />
+  </radialGradient>
+  <rect x="0" y="0" width="1024" height="768" fill="url(#vignette)" opacity="0.6"/>
+</svg>
