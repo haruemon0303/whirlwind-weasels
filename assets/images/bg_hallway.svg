@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Hallway background -->
+  <rect width="800" height="600" fill="#1a1a2a"/>
+
+  <!-- Perspective lines -->
+  <polygon points="0,0 200,200 200,400 0,600" fill="#2a2a3a"/>
+  <polygon points="800,0 600,200 600,400 800,600" fill="#2a2a3a"/>
+
+  <!-- Floor tiles -->
+  <polygon points="0,600 200,400 600,400 800,600" fill="#151520"/>
+  <line x1="400" y1="400" x2="400" y2="600" stroke="#0a0a10" stroke-width="4"/>
+
+  <!-- Ceiling -->
+  <polygon points="0,0 200,200 600,200 800,0" fill="#0a0a15"/>
+
+  <!-- Light source -->
+  <ellipse cx="400" cy="150" rx="60" ry="30" fill="#4a4a6a" opacity="0.5"/>
+</svg>

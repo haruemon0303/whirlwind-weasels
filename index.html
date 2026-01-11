@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>夜想曲 - Sound Novel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sound Enable Overlay (for iOS audio unlock) -->
+    <div id="soundEnableOverlay" class="overlay">
+        <div class="overlay-content">
+            <h2>夜想曲</h2>
+            <p>タップして始める</p>
+            <button id="enableSoundBtn" class="btn-primary">START</button>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="gameContainer" class="game-container" style="display: none;">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="title">夜想曲</div>
+            <div class="header-controls">
+                <button id="menuBtn" class="icon-btn" title="メニュー">≡</button>
+            </div>
+        </header>
+
+        <!-- Game Screen -->
+        <main class="game-screen">
+            <!-- Background Layer -->
+            <div id="bgLayer" class="bg-layer"></div>
+
+            <!-- Character Layer -->
+            <div id="charLayer" class="char-layer"></div>
+
+            <!-- Effect Layer (for shake, flash, noise) -->
+            <div id="effectLayer" class="effect-layer"></div>
+
+            <!-- Text Box -->
+            <div class="text-box">
+                <div id="speakerName" class="speaker-name"></div>
+                <div id="textContent" class="text-content"></div>
+                <div class="continue-indicator" id="continueIndicator">▼</div>
+            </div>
+
+            <!-- Choice Buttons -->
+            <div id="choiceContainer" class="choice-container"></div>
+        </main>
+
+        <!-- Menu Panel -->
+        <div id="menuPanel" class="menu-panel">
+            <div class="menu-content">
+                <h3>メニュー</h3>
+
+                <div class="menu-section">
+                    <button id="saveBtn" class="menu-btn">セーブ</button>
+                    <button id="loadBtn" class="menu-btn">ロード</button>
+                    <button id="titleBtn" class="menu-btn">タイトルへ</button>
+                </div>
+
+                <div class="menu-section">
+                    <label>音量</label>
+                    <div class="volume-control">
+                        <span>BGM</span>
+                        <input type="range" id="bgmVolume" min="0" max="100" value="70">
+                        <span id="bgmVolumeValue">70%</span>
+                    </div>
+                    <div class="volume-control">
+                        <span>SE</span>
+                        <input type="range" id="seVolume" min="0" max="100" value="80">
+                        <span id="seVolumeValue">80%</span>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <button id="autoBtn" class="menu-btn toggle-btn">オート: OFF</button>
+                    <button id="skipBtn" class="menu-btn toggle-btn">スキップ: OFF</button>
+                    <button id="logBtn" class="menu-btn">バックログ</button>
+                </div>
+
+                <button id="closeMenuBtn" class="menu-btn btn-close">閉じる</button>
+            </div>
+        </div>
+
+        <!-- Backlog Panel -->
+        <div id="logPanel" class="log-panel">
+            <div class="log-content">
+                <h3>バックログ</h3>
+                <div id="logEntries" class="log-entries"></div>
+                <button id="closeLogBtn" class="menu-btn btn-close">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loadingIndicator" class="loading-indicator">Loading...</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

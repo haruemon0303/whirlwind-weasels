@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Room background - dark atmosphere -->
+  <rect width="800" height="600" fill="#2a1f1f"/>
+
+  <!-- Window with light -->
+  <rect x="550" y="100" width="200" height="250" fill="#4a4a6a" opacity="0.7"/>
+  <rect x="560" y="110" width="80" height="230" fill="#6a6a8a"/>
+  <rect x="660" y="110" width="80" height="230" fill="#6a6a8a"/>
+  <line x1="650" y1="100" x2="650" y2="350" stroke="#3a3a5a" stroke-width="8"/>
+  <line x1="550" y1="225" x2="750" y2="225" stroke="#3a3a5a" stroke-width="8"/>
+
+  <!-- Floor -->
+  <rect x="0" y="450" width="800" height="150" fill="#1a1212"/>
+
+  <!-- Door -->
+  <rect x="50" y="200" width="120" height="250" fill="#3a2a2a"/>
+  <circle cx="140" cy="325" r="8" fill="#8a7a6a"/>
+  <line x1="55" y1="205" x2="55" y2="445" stroke="#2a1a1a" stroke-width="3"/>
+  <line x1="165" y1="205" x2="165" y2="445" stroke="#2a1a1a" stroke-width="3"/>
+</svg>
