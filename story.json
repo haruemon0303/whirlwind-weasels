@@ -1,493 +1,123 @@
 {
-  "title": "夜想曲",
+  "title": "影ノベル：真冬のロケバス、惨劇の予感",
   "startSceneId": "opening",
   "scenes": {
     "opening": {
       "bg": "assets/images/bg_room.svg",
       "bgm": "bgm_main",
       "lines": [
-        {
-          "type": "narration",
-          "text": "深夜零時を回った頃、私は一人、古い屋敷の一室にいた。"
-        },
-        {
-          "type": "narration",
-          "text": "窓の外は闇に包まれ、月明かりさえも届かない。",
-          "effect": "shake"
-        },
-        {
-          "type": "system",
-          "text": "遠くから何かを叩く音が聞こえてくる……",
-          "se": "knock"
-        },
-        {
-          "type": "narration",
-          "text": "その音は規則的で、まるで誰かが扉を叩いているようだった。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "……誰だ？こんな時間に……"
-        },
-        {
-          "type": "narration",
-          "text": "私はゆっくりと立ち上がり、音のする方向を見つめた。"
-        }
+        { "type": "system", "text": "【BGM：静かな吹雪の音】", "se": "ambient" },
+        { "type": "narration", "text": "一面の銀世界。" },
+        { "type": "narration", "text": "長野県の山奥、視界を遮るほどの猛吹雪の中、一台のロケバスが立ち往生していた。" },
+        { "type": "narration", "text": "番組の企画は「秘境の温泉で一晩過ごす」というものだったが、道を間違えたのか、あるいは……。" },
+
+        { "type": "system", "text": "【SE：カチッ、カチッ（ライター）】", "se": "lighter" },
+        { "type": "narration", "text": "バスの最後尾座席。薄暗い車内の中で、矢内さんが一点を見つめていた。" },
+        { "type": "narration", "text": "その目は、テレビで見せる狂気じみたキャラクターそのものだった。" },
+
+        { "type": "dialogue", "speaker": "矢内", "text": "……透。お前、さっきから何を見てるんや" },
+        { "type": "dialogue", "speaker": "透", "text": "あ、いえ……雪がひどいなと思って" },
+        { "type": "dialogue", "speaker": "矢内", "text": "雪？ 違うやろ。お前、俺の『スニーカー』見てたやろ。これ、プレ値で20万したやつやぞ。雪で濡れたらどう責任取ってくれるんや" },
+        { "type": "dialogue", "speaker": "透", "text": "すみません、そんなつもりじゃ……" },
+
+        { "type": "narration", "text": "矢内はフンと鼻を鳴らすと、窓の外を指差した。" },
+        { "type": "dialogue", "speaker": "矢内", "text": "見てみぃ。あの木陰……誰か立っとるぞ" },
+
+        { "type": "system", "text": "【BGM：不穏な低音】", "effect": "noise" },
+        { "type": "dialogue", "speaker": "透", "text": "えっ……？" },
+        { "type": "narration", "text": "慌てて窓の外を見るが、そこには荒れ狂う雪の渦があるだけだ。" },
+        { "type": "narration", "text": "しかし、矢内の表情は真剣そのものだった。" },
+        { "type": "dialogue", "speaker": "矢内", "text": "……あれは浜原や。浜原が、痛風の足をひきずりながらこっちを見てる。あいつ、先に行きよったんや" },
+        { "type": "narration", "text": "だが、相方の浜原さんは、一時間前のトイレ休憩から戻ってきていないはずだった。" },
+
+        { "type": "system", "text": "（青い影が、窓の向こうで揺れた気がした。）", "effect": "noise" }
       ],
       "choices": [
-        {
-          "label": "扉の方へ向かう",
-          "nextSceneId": "approach_door"
-        },
-        {
-          "label": "窓の外を確認する",
-          "nextSceneId": "check_window"
-        },
-        {
-          "label": "部屋に留まる",
-          "nextSceneId": "stay_room"
-        }
+        { "label": "次へ", "nextSceneId": "choice_point" }
       ]
     },
-    "approach_door": {
-      "bg": "assets/images/bg_hallway.svg",
-      "bgm": "bgm_main",
-      "lines": [
-        {
-          "type": "narration",
-          "text": "私は意を決して扉へと向かった。",
-          "se": "footstep"
-        },
-        {
-          "type": "narration",
-          "text": "廊下は暗く、足音だけが静寂を破っていた。"
-        },
-        {
-          "type": "narration",
-          "text": "扉の前に立つと、ノックの音が止んだ。",
-          "effect": "flash"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "……誰もいない？"
-        },
-        {
-          "type": "narration",
-          "text": "そう思った瞬間、扉がゆっくりと開き始めた。",
-          "se": "door_open"
-        },
-        {
-          "type": "system",
-          "text": "扉の向こうには……",
-          "effect": "noise"
-        }
-      ],
-      "choices": [
-        {
-          "label": "中を覗く",
-          "nextSceneId": "peek_inside"
-        },
-        {
-          "label": "逃げ出す",
-          "nextSceneId": "escape"
-        }
-      ]
-    },
-    "check_window": {
+
+    "choice_point": {
       "bg": "assets/images/bg_room.svg",
       "bgm": "bgm_main",
       "lines": [
-        {
-          "type": "narration",
-          "text": "私は窓に近づき、外を確認することにした。"
-        },
-        {
-          "type": "narration",
-          "text": "カーテンをそっと開けると、月明かりが差し込んできた。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "何も……いない？"
-        },
-        {
-          "type": "narration",
-          "text": "しかし、視線を下に向けると、庭に何かの影が見えた。",
-          "effect": "shake"
-        },
-        {
-          "type": "system",
-          "text": "それは人の形をしていたが、動かない。",
-          "se": "ambient"
-        },
-        {
-          "type": "narration",
-          "text": "背筋が凍る思いがした。その時、背後から声が聞こえた。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "？？？",
-          "text": "見つけたよ……"
-        }
+        { "type": "narration", "text": "バスの扉が、外側から何者かによって激しく叩かれた。" },
+        { "type": "system", "text": "【SE：ドンドンドンドン！！】", "se": "knock", "effect": "shake" },
+        { "type": "dialogue", "speaker": "真理", "text": "きゃああっ！" },
+        { "type": "narration", "text": "真理が悲鳴を上げる。" },
+        { "type": "narration", "text": "運転手は気絶し、車内には僕と真理、そして異様な落ち着きを見せる矢内さんだけ。" },
+        { "type": "narration", "text": "僕はどうする……？" }
       ],
       "choices": [
-        {
-          "label": "振り返る",
-          "nextSceneId": "bad_end_1"
-        }
+        { "label": "1. 勇気を出して、バスの扉を開ける。", "nextSceneId": "mystery_1" },
+        { "label": "2. 矢内さんの後ろに隠れて様子を見る。", "nextSceneId": "bad_end_15" },
+        { "label": "3. 「浜原さーーん！」と叫んでみる。", "nextSceneId": "branch_3_stub" }
       ]
     },
-    "stay_room": {
+
+    "mystery_1": {
       "bg": "assets/images/bg_room.svg",
       "bgm": "bgm_main",
       "lines": [
-        {
-          "type": "narration",
-          "text": "私は部屋に留まることにした。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "きっと風か何かだろう……"
-        },
-        {
-          "type": "narration",
-          "text": "そう自分に言い聞かせ、再び椅子に座った。",
-          "se": "lighter"
-        },
-        {
-          "type": "narration",
-          "text": "しかし、ノックの音は止まらなかった。",
-          "effect": "noise"
-        },
-        {
-          "type": "narration",
-          "text": "むしろ、徐々に激しくなっていく。"
-        },
-        {
-          "type": "system",
-          "text": "ドンドンドン……！",
-          "se": "knock",
-          "effect": "shake"
-        },
-        {
-          "type": "narration",
-          "text": "私は耳を塞いだが、音は頭の中に響き続けた。"
-        },
-        {
-          "type": "narration",
-          "text": "そして、ついに扉が開いた。"
-        }
+        { "type": "narration", "text": "僕は震える手で扉のレバーを引いた。", "se": "door_open" },
+        { "type": "narration", "text": "雪崩れ込んでくる冷気。" },
+        { "type": "narration", "text": "そこには、誰もいなかった。" },
+        { "type": "narration", "text": "ただ、足元に一枚の競馬のマークカードが落ちていた。" },
+
+        { "type": "dialogue", "speaker": "矢内", "text": "……ほう。これは『有馬記念』の買い目やな。しかもこれ、全部外れとる。呪いや……これは、ギャンブルに負け続けた男の生霊の仕業や" },
+        { "type": "dialogue", "speaker": "真理", "text": "矢内さん、ふざけないで！ 浜原さんはどこにいったの！？" },
+        { "type": "dialogue", "speaker": "矢内", "text": "……真理ちゃん。あんた、さっきから浜原、浜原ってうるさいなあ。浜原なら、もうあそこにいるやんか" },
+
+        { "type": "narration", "text": "矢内が指差した先。バスのフロントガラスに、べっとりと「赤い液体」で文字が書かれていた。", "effect": "flash" },
+        { "type": "system", "text": "『 予 想 外 』", "effect": "flash" },
+
+        { "type": "system", "text": "【BGM：急激なピアノの連打】", "effect": "noise" },
+        { "type": "dialogue", "speaker": "透", "text": "これは……血ですか！？" },
+        { "type": "dialogue", "speaker": "矢内", "text": "いや、明太子のドレッシングやな。浜原、最近痛風やから食事制限しとるはずやのに……。これはメッセージや。あいつ、我慢できずに明太子食べよったんや" },
+
+        { "type": "narration", "text": "その時、バスの屋根の上から「ギギギ……」という嫌な音が響いた。", "se": "ambient", "effect": "shake" },
+        { "type": "system", "text": "── この先は未実装（続きは後日追加） ──" }
       ],
       "choices": [
-        {
-          "label": "扉を見る",
-          "nextSceneId": "bad_end_2"
-        }
+        { "label": "分岐へ戻る", "nextSceneId": "choice_point" },
+        { "label": "タイトルへ戻る", "nextSceneId": "opening" }
       ]
     },
-    "peek_inside": {
-      "bg": "assets/images/bg_hallway.svg",
-      "bgm": "bgm_main",
-      "lines": [
-        {
-          "type": "narration",
-          "text": "私は恐る恐る、扉の向こうを覗いた。"
-        },
-        {
-          "type": "narration",
-          "text": "そこには、何もなかった。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "誰もいない……？"
-        },
-        {
-          "type": "narration",
-          "text": "安堵のため息をついた瞬間、背後から声が聞こえた。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "？？？",
-          "text": "探していたのは、こっちだよ。"
-        },
-        {
-          "type": "narration",
-          "text": "振り返ると、そこには見知らぬ人物が立っていた。",
-          "effect": "flash"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "リョウ",
-          "text": "驚かせてしまったかな。私はリョウ。君を助けに来たんだ。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "助ける……？一体、何が起きているんだ？"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "リョウ",
-          "text": "この屋敷には、古い呪いがかかっている。今夜中に脱出しなければ……"
-        },
-        {
-          "type": "narration",
-          "text": "リョウの言葉を信じるべきか、私は迷った。"
-        }
-      ],
-      "choices": [
-        {
-          "label": "リョウと共に脱出する",
-          "nextSceneId": "good_end"
-        },
-        {
-          "label": "一人で考える時間が欲しい",
-          "nextSceneId": "neutral_end"
-        }
-      ]
-    },
-    "escape": {
+
+    "bad_end_15": {
       "bg": "assets/images/bg_room.svg",
       "bgm": "bgm_main",
       "lines": [
-        {
-          "type": "narration",
-          "text": "私は恐怖に駆られ、元の部屋へと逃げ戻った。",
-          "se": "footstep"
-        },
-        {
-          "type": "narration",
-          "text": "扉を閉め、鍵をかけた。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "はぁ……はぁ……"
-        },
-        {
-          "type": "narration",
-          "text": "しかし、安心したのも束の間、窓の外から視線を感じた。",
-          "effect": "noise"
-        },
-        {
-          "type": "narration",
-          "text": "振り向くと、窓の向こうに無数の影が浮かんでいた。"
-        }
+        { "type": "narration", "text": "僕は恐怖に負け、矢内さんの背中にしがみついた。" },
+        { "type": "dialogue", "speaker": "矢内", "text": "……透。お前、今俺の背中に触れたな？" },
+        { "type": "dialogue", "speaker": "透", "text": "すみません、怖くて……！" },
+        { "type": "dialogue", "speaker": "矢内", "text": "……アウトや。俺、他人に背中触られるの、一番嫌いなんや。お前の負けや" },
+
+        { "type": "system", "text": "【SE：シュッ！】", "se": "ambient", "effect": "flash" },
+        { "type": "narration", "text": "気がつくと、僕は矢内さんに「論破」されていた。" },
+        { "type": "narration", "text": "何を言っても「エビデンスは？」「それってあなたの感想ですよね？」と詰め寄られ、僕の精神は崩壊した。" },
+        { "type": "narration", "text": "吹雪の中、僕は正気を失い、裸足で雪山へと駆け出していった……。" },
+
+        { "type": "system", "text": "── BAD END No.15 「ロジカル・デス」──", "effect": "noise" }
       ],
       "choices": [
-        {
-          "label": "次へ",
-          "nextSceneId": "bad_end_3"
-        }
+        { "label": "分岐へ戻る", "nextSceneId": "choice_point" },
+        { "label": "タイトルへ戻る", "nextSceneId": "opening" }
       ]
     },
-    "good_end": {
-      "bg": "assets/images/bg_ending.svg",
-      "bgm": "bgm_ending",
-      "lines": [
-        {
-          "type": "narration",
-          "text": "私はリョウと共に屋敷を脱出することにした。"
-        },
-        {
-          "type": "narration",
-          "text": "二人で廊下を駆け抜け、玄関へと向かった。",
-          "se": "footstep"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "リョウ",
-          "text": "もう少しだ、頑張れ！"
-        },
-        {
-          "type": "narration",
-          "text": "重い扉を押し開けると、外の空気が流れ込んできた。",
-          "se": "door_open"
-        },
-        {
-          "type": "narration",
-          "text": "夜明け前の空は、まだ暗かったが、どこか安心感があった。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "助かった……本当にありがとう。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "リョウ",
-          "text": "無事で良かった。さあ、ここから離れよう。"
-        },
-        {
-          "type": "narration",
-          "text": "二人は屋敷から離れ、朝日が昇る方向へと歩いていった。"
-        },
-        {
-          "type": "system",
-          "text": "── GOOD END ──"
-        }
-      ],
-      "choices": [
-        {
-          "label": "タイトルへ戻る",
-          "nextSceneId": "opening"
-        }
-      ]
-    },
-    "neutral_end": {
+
+    "branch_3_stub": {
       "bg": "assets/images/bg_room.svg",
       "bgm": "bgm_main",
       "lines": [
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "すまない、一人で考える時間が欲しい。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "リョウ",
-          "text": "……そうか。わかった。でも、時間はあまりない。"
-        },
-        {
-          "type": "narration",
-          "text": "リョウは少し寂しそうな表情を浮かべ、廊下の奥へと消えていった。"
-        },
-        {
-          "type": "narration",
-          "text": "私は一人、部屋に残された。"
-        },
-        {
-          "type": "narration",
-          "text": "窓の外を見ると、空が徐々に白んできていた。"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "これで良かったのだろうか……"
-        },
-        {
-          "type": "narration",
-          "text": "答えは見つからないまま、夜が明けていった。"
-        },
-        {
-          "type": "system",
-          "text": "── NEUTRAL END ──"
-        }
+        { "type": "dialogue", "speaker": "透", "text": "浜原さーーん！" },
+        { "type": "narration", "text": "叫んだ瞬間、吹雪が一段強くなった気がした。", "effect": "noise" },
+        { "type": "narration", "text": "返事はない。代わりに、扉を叩く音だけが近づいてくる。", "se": "knock", "effect": "shake" },
+        { "type": "system", "text": "── この分岐は未実装（続きは後日追加） ──" }
       ],
       "choices": [
-        {
-          "label": "タイトルへ戻る",
-          "nextSceneId": "opening"
-        }
-      ]
-    },
-    "bad_end_1": {
-      "bg": "assets/images/bg_room.svg",
-      "bgm": "bgm_main",
-      "lines": [
-        {
-          "type": "narration",
-          "text": "私は恐る恐る振り返った。",
-          "effect": "shake"
-        },
-        {
-          "type": "narration",
-          "text": "そこには、真っ黒な影が立っていた。"
-        },
-        {
-          "type": "narration",
-          "text": "声を上げる暇もなく、私の意識は闇に飲み込まれた。",
-          "effect": "flash"
-        },
-        {
-          "type": "system",
-          "text": "── BAD END ──"
-        }
-      ],
-      "choices": [
-        {
-          "label": "タイトルへ戻る",
-          "nextSceneId": "opening"
-        }
-      ]
-    },
-    "bad_end_2": {
-      "bg": "assets/images/bg_room.svg",
-      "bgm": "bgm_main",
-      "lines": [
-        {
-          "type": "narration",
-          "text": "扉の向こうから、何かが這い出してきた。",
-          "effect": "noise"
-        },
-        {
-          "type": "narration",
-          "text": "それは人の形をしているようで、していなかった。"
-        },
-        {
-          "type": "narration",
-          "text": "私は動くことができず、ただその場に立ち尽くしていた。",
-          "effect": "shake"
-        },
-        {
-          "type": "narration",
-          "text": "そして……",
-          "effect": "flash"
-        },
-        {
-          "type": "system",
-          "text": "── BAD END ──"
-        }
-      ],
-      "choices": [
-        {
-          "label": "タイトルへ戻る",
-          "nextSceneId": "opening"
-        }
-      ]
-    },
-    "bad_end_3": {
-      "bg": "assets/images/bg_room.svg",
-      "bgm": "bgm_main",
-      "lines": [
-        {
-          "type": "narration",
-          "text": "影たちは窓ガラスを突き破り、部屋の中へと入ってきた。",
-          "effect": "shake",
-          "se": "ambient"
-        },
-        {
-          "type": "narration",
-          "text": "私は逃げ場を失い、部屋の隅に追い詰められた。"
-        },
-        {
-          "type": "narration",
-          "text": "影たちがゆっくりと近づいてくる。",
-          "effect": "noise"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "アキラ",
-          "text": "誰か……助けて……"
-        },
-        {
-          "type": "narration",
-          "text": "しかし、その声は誰にも届かなかった。",
-          "effect": "flash"
-        },
-        {
-          "type": "system",
-          "text": "── BAD END ──"
-        }
-      ],
-      "choices": [
-        {
-          "label": "タイトルへ戻る",
-          "nextSceneId": "opening"
-        }
+        { "label": "分岐へ戻る", "nextSceneId": "choice_point" },
+        { "label": "タイトルへ戻る", "nextSceneId": "opening" }
       ]
     }
   }
