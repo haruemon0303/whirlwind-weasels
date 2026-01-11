@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --sat: env(safe-area-inset-top, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --header-height: 56px;
+}
+
 html {
     height: 100%;
     height: 100svh; /* Support Safari small viewport height */
@@ -89,13 +95,17 @@ body {
 
 /* Header */
 .game-header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(var(--header-height) + var(--sat));
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-    padding-top: calc(0.5rem + env(safe-area-inset-top, 0px));
+    padding-top: calc(0.5rem + var(--sat));
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
 }
@@ -135,6 +145,7 @@ body {
     flex: 1;
     position: relative;
     overflow: hidden;
+    padding-top: calc(var(--header-height) + var(--sat));
 }
 
 /* Background Layer */
@@ -219,9 +230,9 @@ body {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 100%);
     backdrop-filter: blur(10px);
     padding: 1.5rem;
-    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(1.5rem + var(--sab));
     min-height: 180px;
-    max-height: calc(100svh - 60px - 100px); /* 60px header, 100px for choices/margin */
+    max-height: calc(100svh - var(--header-height) - var(--sat) - 100px); /* header + safe-area-top + choices/margin */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 10;
@@ -245,7 +256,7 @@ body {
 
 .continue-indicator {
     position: absolute;
-    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    bottom: calc(1rem + var(--sab));
     right: 1rem;
     font-size: 1.5rem;
     animation: blink 1s infinite;
@@ -260,7 +271,7 @@ body {
 /* Choice Container */
 .choice-container {
     position: absolute;
-    bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    bottom: calc(2rem + var(--sab));
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
