@@ -246,6 +246,12 @@ class SoundNovelEngine {
             if (index < text.length) {
                 this.textContent.textContent += text[index];
                 index++;
+
+                // Auto-scroll text box to bottom as text is added
+                const textBox = this.textContent.closest('.text-box');
+                if (textBox) {
+                    textBox.scrollTop = textBox.scrollHeight;
+                }
             } else {
                 clearInterval(typeInterval);
                 this.isTyping = false;
@@ -267,6 +273,12 @@ class SoundNovelEngine {
         const line = scene.lines[this.currentLineIndex - 1];
         if (line) {
             this.textContent.textContent = line.text;
+        }
+
+        // Auto-scroll text box to bottom after skipping
+        const textBox = this.textContent.closest('.text-box');
+        if (textBox) {
+            textBox.scrollTop = textBox.scrollHeight;
         }
 
         this.isTyping = false;
@@ -481,6 +493,54 @@ class SoundNovelEngine {
         } else if (seId === 'ambient') {
             // Ambient noise - low frequency modulation
             osc.frequency.value = 60;
+            osc.type = 'sawtooth';
+            gain.gain.setValueAtTime(0.15, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 1);
+            osc.start(now);
+            osc.stop(now + 1);
+        } else if (seId === 'echo') {
+            // Echo sound - repeating decay
+            osc.frequency.value = 400;
+            osc.type = 'sine';
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 1.5);
+            osc.start(now);
+            osc.stop(now + 1.5);
+        } else if (seId === 'boing') {
+            // Boing sound - frequency sweep
+            osc.frequency.setValueAtTime(800, now);
+            osc.frequency.exponentialRampToValueAtTime(200, now + 0.3);
+            osc.type = 'sine';
+            gain.gain.setValueAtTime(0.25, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+            osc.start(now);
+            osc.stop(now + 0.3);
+        } else if (seId === 'heartbeat') {
+            // Heartbeat sound - low frequency pulse
+            osc.frequency.value = 40;
+            osc.type = 'sine';
+            gain.gain.setValueAtTime(0.3, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+            osc.start(now);
+            osc.stop(now + 0.2);
+            // Second beat
+            setTimeout(() => {
+                const osc2 = this.audioContext.createOscillator();
+                const gain2 = this.audioContext.createGain();
+                osc2.connect(gain2);
+                gain2.connect(this.seGainNode);
+                osc2.frequency.value = 40;
+                osc2.type = 'sine';
+                const now2 = this.audioContext.currentTime;
+                gain2.gain.setValueAtTime(0.25, now2);
+                gain2.gain.exponentialRampToValueAtTime(0.01, now2 + 0.15);
+                osc2.start(now2);
+                osc2.stop(now2 + 0.15);
+            }, 200);
+        } else if (seId === 'wind') {
+            // Wind sound - noise-like sweep
+            osc.frequency.setValueAtTime(300, now);
+            osc.frequency.exponentialRampToValueAtTime(100, now + 1);
             osc.type = 'sawtooth';
             gain.gain.setValueAtTime(0.15, now);
             gain.gain.exponentialRampToValueAtTime(0.01, now + 1);
