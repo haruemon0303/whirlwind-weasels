@@ -158,6 +158,7 @@ Your site is published at https://[username].github.io/[repository-name]/
 ### 現在の実装
 
 デフォルトでは、Web Audio APIを使用してブラウザ内で音声を生成しています。これにより著作権の問題を回避しています。
+現在はサウンド無効化中です。
 
 ### カスタム音声ファイルの追加
 

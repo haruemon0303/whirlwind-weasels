@@ -2,6 +2,8 @@
 // Sound Novel Engine - 夜想曲
 // ========================================
 
+const SOUND_DISABLED = true;
+
 class SoundNovelEngine {
     constructor() {
         // Game State
@@ -19,6 +21,7 @@ class SoundNovelEngine {
         this.seGainNode = null;
         this.bgmVolume = 0.7;
         this.seVolume = 0.8;
+        this.bgmAudio = null;
 
         // Features
         this.isAutoMode = false;
@@ -99,21 +102,25 @@ class SoundNovelEngine {
     }
 
     async enableSound() {
-        // Initialize AudioContext (iOS requirement)
-        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        this.stopAllAudio();
 
-        // Create gain nodes for volume control
-        this.bgmGainNode = this.audioContext.createGain();
-        this.bgmGainNode.connect(this.audioContext.destination);
-        this.bgmGainNode.gain.value = this.bgmVolume;
+        if (!SOUND_DISABLED) {
+            // Initialize AudioContext (iOS requirement)
+            this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-        this.seGainNode = this.audioContext.createGain();
-        this.seGainNode.connect(this.audioContext.destination);
-        this.seGainNode.gain.value = this.seVolume;
+            // Create gain nodes for volume control
+            this.bgmGainNode = this.audioContext.createGain();
+            this.bgmGainNode.connect(this.audioContext.destination);
+            this.bgmGainNode.gain.value = this.bgmVolume;
 
-        // Resume audio context (iOS requirement)
-        if (this.audioContext.state === 'suspended') {
-            await this.audioContext.resume();
+            this.seGainNode = this.audioContext.createGain();
+            this.seGainNode.connect(this.audioContext.destination);
+            this.seGainNode.gain.value = this.seVolume;
+
+            // Resume audio context (iOS requirement)
+            if (this.audioContext.state === 'suspended') {
+                await this.audioContext.resume();
+            }
         }
 
         // Load story data
@@ -147,6 +154,8 @@ class SoundNovelEngine {
     }
 
     loadScene() {
+        this.stopAllAudio();
+
         const scene = this.storyData.scenes[this.currentSceneId];
         if (!scene) {
             console.error('Scene not found:', this.currentSceneId);
@@ -379,7 +388,27 @@ class SoundNovelEngine {
     // Audio Functions
     // ========================================
 
+    stopAllAudio() {
+        if (this.currentBGM && this.currentBGM.stop) {
+            this.currentBGM.stop();
+        }
+        this.currentBGM = null;
+
+        if (this.bgmAudio) {
+            this.bgmAudio.pause();
+            this.bgmAudio.currentTime = 0;
+            this.bgmAudio = null;
+        }
+
+        document.querySelectorAll('audio').forEach((audio) => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    }
+
     playBGM(bgmId) {
+        if (SOUND_DISABLED) return;
+
         // Stop current BGM
         if (this.currentBGM) {
             this.currentBGM.stop();
@@ -447,6 +476,7 @@ class SoundNovelEngine {
     }
 
     playSE(seId) {
+        if (SOUND_DISABLED) return;
         if (!this.audioContext) return;
 
         const now = this.audioContext.currentTime;
@@ -696,11 +726,16 @@ class SoundNovelEngine {
 
     returnToTitle() {
         if (confirm('タイトルに戻りますか？')) {
-            this.currentSceneId = this.storyData.startSceneId;
-            this.currentLineIndex = 0;
-            this.loadScene();
+            this.restartGame();
             this.closeMenu();
         }
+    }
+
+    restartGame() {
+        this.stopAllAudio();
+        this.currentSceneId = this.storyData.startSceneId;
+        this.currentLineIndex = 0;
+        this.loadScene();
     }
 
     saveSettings() {
